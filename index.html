@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Query Interface</h1>
+            <p>Submit your query to get a response</p>
+        </div>
+
+        <div class="query-section">
+            <div class="input-group">
+                <label for="queryInput">Your Query:</label>
+                <textarea 
+                    id="queryInput" 
+                    placeholder="Enter your query here..."
+                    rows="4"
+                ></textarea>
+            </div>
+
+            <div class="api-config">
+                <label for="apiEndpoint">API Gateway Endpoint:</label>
+                <input 
+                    type="text" 
+                    id="apiEndpoint" 
+                    placeholder="https://your-api-gateway-url.amazonaws.com/prod/query"
+                    value=""
+                >
+            </div>
+
+            <button id="submitBtn" class="submit-btn">
+                <span class="btn-text">Submit Query</span>
+                <span class="spinner" style="display: none;"></span>
+            </button>
+        </div>
+
+        <div id="responseSection" class="response-section" style="display: none;">
+            <h2>Response:</h2>
+            <div id="responseContent" class="response-content"></div>
+        </div>
+
+        <div id="errorSection" class="error-section" style="display: none;">
+            <h2>Error:</h2>
+            <div id="errorContent" class="error-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
